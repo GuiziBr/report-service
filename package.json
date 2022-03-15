@@ -1,0 +1,22 @@
+{
+  "name": "report-service",
+  "version": "1.0.0",
+  "description": "Lambda for sending expenses report email",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "invoke-local": "sls invoke local -f report-service "
+  },
+  "author": "Ricardo Guizi",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "serverless-plugin-typescript": "^2.1.1",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1089.0",
+    "axios": "^0.26.0",
+    "date-fns": "^2.28.0"
+  }
+}

@@ -1,0 +1,23 @@
+service: report-service
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+custom:
+  schedulerRate: rate(5 minutes)
+  enabled: false
+
+functions:
+  report-service:
+    handler: handler.expensesReport
+    events:
+      - schedule:
+         rate: ${self:custom.schedulerRate}
+         name: report-service
+         description: Create and send expenses report
+         enabled: ${self:custom.enabled}
+
+plugins:
+  - serverless-plugin-typescript
